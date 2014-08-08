@@ -20,6 +20,7 @@ if(n==1)
 {
 temp->next=head; 
 head= temp1; 
+return;
 }
 
 struct Node* temp2= head; //we have initialized this temp2 to point to the address of head initially
