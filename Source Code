@@ -48,6 +48,7 @@ printf("%d" , temp->data);
 temp1 = temp1->nextl; 
 }
 printf("\n");
+} 
 
 
 main()
