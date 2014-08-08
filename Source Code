@@ -1,0 +1,65 @@
+/* This is the source code of this program */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{
+int data;             //This is the data field whatever you want to insert inside of the Node
+struct Node *next;    //This is the adding or setting a link to the next Node 
+}; 
+
+struct Node *head;   //we setted head pointer to of type  struct Node
+
+void Insert(int x, int n)
+{
+struct Node *temp= (struct Node*) malloc(sizeof(struct Node)); 
+temp->data= x; 
+temp->next= NULL; 
+
+if(n==1)
+{
+temp->next=head; 
+head= temp1; 
+}
+
+struct Node* temp2= head; //we have initialized this temp2 to point to the address of head initially
+
+int i; 
+for(i=0; i<n-2 ; i++)  //this loop goes till n-1 becoz head has the first place but head is at 0th place if we consider the more advance detail of the program consider this as and examplanatory array just like we use to have the starting index as the 0 and the element is the first. So we want to insert at the 4th place for example than we have to check the 3rd postion of this linked list that would be the (n-1)th position for us.But this is very typical example so n =4 and then we have this index of the 4 as the 3rd so we can write this as index of the 4th place is 3. so the index of 3rd place will be 2 so we done n-2 here 
+{
+temp2= temp2->next;    //intialially this temp2 is pointing to the head. Now this temp2 is = to the address of the what head is pointing to so now temp2 is moving a furthur step after that temp2 will get the address of the next element what head was pointing to and this way we are moving to the next of the elment and that has the address of the next and like this we are moving ahead in the list 
+}
+// now the real part of this program or i can say the function is to make the links we have already inserted the data so now we will built up the links so our linked list remains intact and setted 
+//as we know that the temp2 is the n-1 what we were talking about 
+
+temp1->next= temp2->next;  // se the code line below of it and you would get and idea. In this line what are we doing is we assigining the address of the temp2->node to the temp1->next so the link we had previosly is not broken 
+temp2->next=temp1;      // look at this step first this step says that we are assigning the address of temp1 i.e. our new node to the temp2->next pointer of our the temp2 node that is the previous node of our insertion node 
+}
+
+void Print()
+{
+struct Node *temp1-> next = head; // so we are starting of with the head of our linked list and then we can transverse to end of the linked list using a loop
+//we used this struct Node cause we didn't initialized temp globally
+
+while (temp1 !=NULL) 
+{
+printf ("Your list is: "); 
+printf("%d" , temp->data);
+temp1 = temp1->nextl; 
+}
+printf("\n");
+
+
+main()
+{
+head =NULL; 
+Insert(5,1)l;
+Insert(2,2); 
+Insert(543,3); 
+Insert(34,4); 
+Print(); 
+
+return 0;
+} 
+
+
